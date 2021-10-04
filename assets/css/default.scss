@@ -363,10 +363,11 @@ object {
 
   button.wp-block-search__button {
     width: 80px;
-    height: 56px;
+    height: 50px;
     color: #fff;
-    line-height: 47px;
-    top: 71px;
+    line-height: 50px;
+    top: 53px;
+    right: 0;
     background: #5d7db1;
   }
 }
@@ -1001,14 +1002,17 @@ th, td {
   display: block;
   color: #666666;
   text-transform: capitalize;
-  border-bottom: 2px solid #f5f5f5;
+  border-bottom: 1px solid #cccccc;
   padding: 12px 0;
+  line-height: 1;
 
   &:hover {
     color: var(--primary-color);
   }
 }
-
+.wp-block-latest-comments .wp-block-latest-comments__comment a{
+  color: #666666;
+}
 .wp-block-latest-comments__comment {
   margin: 0;
   line-height: inherit;

@@ -73,6 +73,8 @@ if ( ! function_exists( 'landzai_setup' ) ) :
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
+
+        add_theme_support( 'woocommerce');
 	}
 endif;
 add_action( 'after_setup_theme', 'landzai_setup' );

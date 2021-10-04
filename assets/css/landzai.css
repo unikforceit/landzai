@@ -15472,7 +15472,8 @@ register-form-area
   margin-bottom: 5rem;
 }
 
-.blog-sidebar .widget .widget-title {
+.blog-sidebar .widget .widget-title,
+.widget_block h2, .widget_block label {
   margin-top: 0;
   margin-bottom: 3rem;
   font-family: "Lato", sans-serif;

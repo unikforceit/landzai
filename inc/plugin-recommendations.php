@@ -41,7 +41,16 @@ function landzai_register_required_plugins() {
 			'force_activation' => false, 
 			'force_deactivation' => false,
 			'external_url' => '',
-		),		
+		),
+        array(
+			'name' => esc_attr__('WooCommerce','landzai'),
+			'slug' => 'woocommerce',
+			'required' => true,
+			'version' => '',
+			'force_activation' => false,
+			'force_deactivation' => false,
+			'external_url' => '',
+		),
 	);
 
     $config = array(
