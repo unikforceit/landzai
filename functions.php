@@ -137,6 +137,7 @@ function landzai_scripts() {
 		wp_enqueue_script( 'comment-reply' ); 
 	}
 	wp_enqueue_script('landzai-bootstrap',get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), landzai_theme_version(), true);
+	wp_enqueue_script('landzai-library',get_template_directory_uri() . '/assets/js/library.js', array('jquery'), landzai_theme_version(), true);
 	wp_enqueue_script('landzai-main',get_template_directory_uri() . '/assets/js/main.js', array('jquery'), landzai_theme_version(), true);
 	wp_enqueue_style('dashicons');
 }
