@@ -47,6 +47,7 @@ get_header();
                                 <a class="view-btn grid active" href="shop-grid.html"><i class="fas fa-th"></i></a>
                                 <a class="view-btn list" href="shop-list.html"><i class="fas fa-list"></i></a>
                             </div>
+                            <?php echo do_shortcode('[woocommerce_product_filter]');?>
                             <div class="shop-filter">
                                 <ul class="filter-list">
                                     <li class="filter-button">
