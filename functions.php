@@ -117,14 +117,41 @@ function landzai_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'landzai_widgets_init' );
+/**
+ * Register Google fonts.
+ *
+ * @return string Google fonts URL for the theme.
+ */
+function landzai_fonts_url() {
+    $fonts_url = '';
+    $fonts     = array();
+    $subsets   = '';
 
+    /* translators: If there are characters in your language that are not supported by this font, translate this to 'off'. Do not translate into your own language. */
+    if ( 'off' !== esc_html_x( 'on', 'Rubik font: on or off', 'textdomain' ) ) {
+        $fonts[] = 'Rubik:300,400,500,600,700,800,900';
+    }
+
+    /* translators: If there are characters in your language that are not supported by this font, translate this to 'off'. Do not translate into your own language. */
+    if ( 'off' !== esc_html_x( 'on', 'Lato font: on or off', 'textdomain' ) ) {
+        $fonts[] = 'Lato:300,400,700,900';
+    }
+
+    if ( $fonts ) {
+        $fonts_url = add_query_arg( array(
+            'family' => urlencode( implode( '|', $fonts ) ),
+            'subset' => urlencode( $subsets ),
+        ), 'https://fonts.googleapis.com/css' );
+    }
+
+    return $fonts_url;
+}
 /**
  * Enqueue scripts and styles.
  */
 function landzai_scripts() {
 
-	wp_enqueue_style('landzai-Rubik',  'https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
-	wp_enqueue_style('landzai-Lato',  'https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+	wp_enqueue_style('landzai-fonts',  landzai_fonts_url());
 	wp_enqueue_style('landzai-bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css');
 	wp_enqueue_style('landzai-flaticon', get_template_directory_uri() . '/assets/css/flaticon.css');
 	wp_enqueue_style('landzai-library', get_template_directory_uri() . '/assets/css/library.css');
