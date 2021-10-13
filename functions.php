@@ -137,6 +137,11 @@ function landzai_fonts_url() {
         $fonts[] = 'Lato:300,400,700,900';
     }
 
+    /* translators: If there are characters in your language that are not supported by this font, translate this to 'off'. Do not translate into your own language. */
+    if ( 'off' !== esc_html_x( 'on', 'Source Sans Pro font: on or off', 'textdomain' ) ) {
+        $fonts[] = 'Source Sans Pro:300,400,600,700,900';
+    }
+
     if ( $fonts ) {
         $fonts_url = add_query_arg( array(
             'family' => urlencode( implode( '|', $fonts ) ),

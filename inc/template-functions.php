@@ -427,14 +427,14 @@ function landzai_dynamic_header(){
     $opt_header = landzai_theme_option('opt_header');
     $opt_page_header = landzai_theme_option('opt_page_header');
 
-    if ($header_switch && class_exists('landzai_theme_hooks')){
+    if ($header_switch == '1'){
             do_action('landzai_header');
     }
     else{
-        if (!is_page_template('theme-builder.php') && $opt_page_header) {
+        if (!is_page_template('theme-builder.php') && !empty($opt_page_header)) {
             echo do_shortcode('[INSERT_ELEMENTOR id="'.$opt_page_header.'"]');
         }
-        elseif (is_page_template('theme-builder.php') && $opt_header) {
+        elseif (is_page_template('theme-builder.php') && !empty($opt_header)) {
             echo do_shortcode('[INSERT_ELEMENTOR id="' . $opt_header . '"]');
         }else{
             get_template_part('template-parts/header','one');
@@ -445,7 +445,7 @@ function landzai_dynamic_footer(){
     $footer_switch = landzai_theme_meta('footer_switch');
     $opt_footer = landzai_theme_option('opt_footer');
 
-    if ($footer_switch && class_exists('landzai_theme_hooks')){
+    if ($footer_switch == '1'){
         do_action('landzai_footer');
     }
     else{
