@@ -163,6 +163,7 @@ function landzai_scripts() {
     wp_enqueue_style('landzai-main', get_template_directory_uri() . '/assets/css/landzai.css');
     wp_enqueue_style('landzai-responsive', get_template_directory_uri() . '/assets/css/responsive.css');
     wp_enqueue_style('landzai-default', get_template_directory_uri() . '/assets/css/default.css');
+    wp_enqueue_style('landzai-wc', get_template_directory_uri() . '/assets/css/woocommerce.css');
     wp_enqueue_style('landzai-style', get_stylesheet_uri() );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

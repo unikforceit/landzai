@@ -11,19 +11,10 @@
  *
  */
 get_header();
-if (is_active_sidebar('sidebar-1')) {
-    $main = 'col-lg-8';
-    $sidebar = 'col-lg-4';
-} else {
-    $main = 'col-lg-12';
-    $sidebar = 'col-lg-12';
-}
 ?>
 <!--- Blog Content --->
 <section class="blog-area-five section">
     <div class="container">
-        <div class="row">
-            <div class="<?php echo esc_attr($main); ?>">
                 <div class="row">
                     <?php if (have_posts()) :
 
@@ -44,11 +35,6 @@ if (is_active_sidebar('sidebar-1')) {
                         <?php landzai_pagination(); ?>
                     </div>
                 </div>
-            </div>
-            <div class="<?php echo esc_attr($sidebar); ?>">
-                <?php get_sidebar(); ?>
-            </div>
-        </div>
     </div>
 </section>
 

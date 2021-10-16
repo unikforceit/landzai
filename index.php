@@ -46,7 +46,7 @@ if (is_active_sidebar('sidebar-1')) {
                 </div>
             </div>
             <div class="<?php echo esc_attr($sidebar); ?>">
-                <?php get_template_part('layouts/sidebar', 'right'); ?>
+                <?php get_sidebar(); ?>
             </div>
         </div>
     </div>
