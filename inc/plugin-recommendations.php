@@ -51,6 +51,15 @@ function landzai_register_required_plugins() {
 			'force_deactivation' => false,
 			'external_url' => '',
 		),
+        array(
+			'name' => esc_attr__('Wishlist','landzai'),
+			'slug' => 'yith-woocommerce-wishlist',
+			'required' => true,
+			'version' => '',
+			'force_activation' => false,
+			'force_deactivation' => false,
+			'external_url' => '',
+		),
 	);
 
     $config = array(

@@ -13118,7 +13118,7 @@ feedback-area
 /*--------------------------
 28.product-area
 ---------------------------*/
-.single-product {
+.single-product-home3 {
   margin-bottom: 3rem;
   padding: 4rem 2rem;
   background: #fffbf2;
@@ -13127,21 +13127,21 @@ feedback-area
   border-radius: 2rem;
 }
 
-.single-product .product-thumbnail {
+.single-product-home3 .product-thumbnail {
   height: 435px;
   margin-bottom: 2rem;
 }
 
-.single-product .product-thumbnail a {
+.single-product-home3 .product-thumbnail a {
   display: block;
 }
 
-.single-product .product-thumbnail img {
+.single-product-home3 .product-thumbnail img {
   max-width: 100%;
   height: auto;
 }
 
-.single-product .product-info .product-name {
+.single-product-home3 .product-info .product-name {
   margin-bottom: 0.5rem;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 2.4rem;
@@ -13150,17 +13150,17 @@ feedback-area
   text-transform: capitalize;
 }
 
-.single-product .product-info .product-name a {
+.single-product-home3 .product-info .product-name a {
   color: var(--color-one);
   -webkit-transition: all 0.5s linear;
   transition: all 0.5s linear;
 }
 
-.single-product .product-info .product-name a:hover {
+.single-product-home3 .product-info .product-name a:hover {
   color: var(--hover-color-three);
 }
 
-.single-product .product-info .poduct-price {
+.single-product-home3 .product-info .poduct-price {
   margin-bottom: 3rem;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 4.8rem;
@@ -17594,7 +17594,9 @@ single-grid-product
   object-fit: cover;
 }
 
-.single-grid-product .product-thumbnail .wishList {
+.single-grid-product .product-thumbnail .wishList,
+.single-grid-product .product-thumbnail .yith-wcwl-wishlistexistsbrowse a,
+.single-grid-product .product-thumbnail .yith-wcwl-wishlistexistsbrowse{
   z-index: 3;
   display: inline-block;
   position: absolute;
@@ -17610,9 +17612,30 @@ single-grid-product
   color: var(--white);
   -webkit-transition: all 0.5s linear;
   transition: all 0.5s linear;
+  i{
+    margin: 0;
+  }
 }
-
-.single-grid-product .product-thumbnail .wishList:hover {
+.single-grid-product .product-thumbnail .yith-wcwl-wishlistexistsbrowse {
+  a {
+    left: -1px;
+    top: -1px;
+    font-size: 8px;
+    height: 42px;
+    width: 42px;
+    color: var(--white);
+    background: var(--black);
+    visibility: hidden;
+    opacity: 0;
+    transition: all .3s ease-in-out;
+  }
+  &:hover a{
+    visibility: visible;
+    opacity: 1;
+  }
+}
+.single-grid-product .product-thumbnail .wishList:hover,
+.single-grid-product .product-thumbnail .yith-wcwl-wishlistexistsbrowse{
   color: var(--white);
   background: var(--black);
 }
@@ -17644,6 +17667,7 @@ single-grid-product
   transition: all 0.5s linear;
 }
 
+.single-grid-product .product-thumbnail .overlay-content .added_to_cart,
 .single-grid-product .product-thumbnail .overlay-content .cart-btn {
   display: inline-block;
   padding: 1.2rem 3rem;
@@ -17689,12 +17713,20 @@ single-grid-product
   color: var(--primary-color-five);
 }
 
-.single-grid-product .product-bottom .product-info .price-sale span {
+.single-grid-product .product-bottom .product-info .price-sale .price {
   font-size: 1.6rem;
   font-weight: 400;
+  margin: 0;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: start;
 }
 
-.single-grid-product .product-bottom .product-info .price-sale .old-price {
+.single-grid-product .product-bottom .product-info .price-sale ins {
+  font-weight: 400;
+  text-decoration: none;
+}
+.single-grid-product .product-bottom .product-info .price-sale del bdi {
   font-style: italic;
   text-decoration: line-through;
   margin-left: 5px;
@@ -18148,11 +18180,10 @@ product-sidebar
   column-gap: 30px;
 }
 
-.shope-toolbar .shope-toolbar-lsft .shope-search .form-group {
+.shope-toolbar .shope-toolbar-lsft .shope-search form {
   position: relative;
 }
-
-.shope-toolbar .shope-toolbar-lsft .shope-search .form-group .form-control {
+.shope-toolbar .shope-toolbar-lsft .shope-search input[type="search"] {
   width: 25rem;
   height: 5rem;
   border: 1px solid #eeeeee;
@@ -18160,17 +18191,20 @@ product-sidebar
   font-size: 1.6rem;
   font-weight: 400;
   color: #666666;
-}
-
-.shope-toolbar .shope-toolbar-lsft .shope-search .form-group .search-btn {
-  position: absolute;
-  right: 1.5rem;
-  top: 1.5rem;
-  border: 0;
-  padding: 0;
+  padding: 10px;
   background: transparent;
 }
-
+.shope-toolbar .shope-toolbar-lsft .shope-search input[type="submit"] {
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: 0;
+  padding: 0;
+  width: 70px;
+  height: 50px;
+  background: #000;
+  color: #fff;
+}
 .shope-toolbar .shope-toolbar-lsft .shop-result-count p {
   margin: 0;
   font-size: 1.6rem;
@@ -18496,6 +18530,7 @@ product-sidebar
   overflow: hidden;
 }
 
+.single-product-page .product-priview-slide a.product-image,
 .single-product-page .product-priview-slide a .product-image {
   width: 100%;
   height: auto;
@@ -18761,7 +18796,13 @@ product-sidebar
   font-weight: 400;
   color: #666666;
 }
-
+.single-cart-whishlist {
+  display: flex;
+  .yith-wcwl-add-to-wishlist {
+    margin: 0;
+  }
+}
+.single-product-page .product-info .added_to_cart.wc-forward,
 .single-product-page .product-info .add-cart-btn {
   display: inline-block;
   margin-right: 1.5rem;
@@ -18780,7 +18821,8 @@ product-sidebar
   color: var(--primary-color-five);
 }
 
-.single-product-page .product-info .favourite {
+.single-product-page .product-info .favourite,
+.single-product-page .product-info .yith-wcwl-wishlistexistsbrowse {
   display: inline-block;
   width: 5rem;
   height: 5rem;
@@ -18792,8 +18834,23 @@ product-sidebar
   color: #666666;
   -webkit-transition: all 0.5s linear;
   transition: all 0.5s linear;
+  i{
+    margin: 0;
+  }
 }
-
+.single-product-page .product-info .yith-wcwl-wishlistexistsbrowse {
+  width: 14rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: #666666;
+  .feedback{
+    margin-right: 5px;
+  }
+  a{
+    color: #666666;
+  }
+}
 .single-product-page .product-info .favourite:hover {
   color: var(--primary-color-five);
 }

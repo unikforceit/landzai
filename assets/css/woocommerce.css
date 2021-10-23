@@ -380,21 +380,6 @@ body .woocommerce-checkout table.shop_table td {
 .woocommerce .woocommerce-cart-form {
     background: white;
 }
-.woocommerce div.product form.cart .button,
-.woocommerce #respond input#submit, .woocommerce a.button,
-.woocommerce button.button, .woocommerce input.button,
-body .woocommerce a.checkout-button.button.alt,
-body .woocommerce #payment #place_order, .woocommerce-page #payment #place_order {
-    font-size: 14px;
-    font-weight: 700;
-    color: #001C2D;
-    background-color: #FFCB57;
-    border-radius: 10px 10px 10px 10px;
-    height: 38px;
-    padding: 0 35px !important;
-    line-height: 38px;
-    display: inline-block;
-}
 body .woocommerce a.checkout-button.button.alt,
 body .woocommerce #payment #place_order, .woocommerce-page #payment #place_order{
     display: block;

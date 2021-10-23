@@ -75,7 +75,8 @@ if ( ! function_exists( 'landzai_setup' ) ) :
 
 
         add_theme_support( 'woocommerce');
-	}
+        add_theme_support( 'wc-product-gallery-slider' );
+    }
 endif;
 add_action( 'after_setup_theme', 'landzai_setup' );
 
@@ -206,4 +207,6 @@ require get_template_directory() . '/inc/plug-dependent.php';
  */
  
 require_once get_template_directory() . '/inc/plugin-recommendations.php';
+
+require_once get_template_directory() . '/inc/wc-functions.php';
 
