@@ -25,11 +25,13 @@ class landzai_theme_hooks {
     function render_preloader(){
 
         if( landzai_theme_option('enb_pre') ){
-            echo '<div class="preloader">
+            echo '<!-- pre-loder-area area start here  -->
+        <div class="preloader">
             <span class="loader">
                 <span class="loader-inner"></span>
             </span>
-        </div>';
+        </div>
+        <!-- pre-loder-area area start here  -->';
         }
     }
     function render_scroll_top(){
@@ -233,7 +235,7 @@ class landzai_theme_hooks {
 
         function dynamic_css() {
             ob_start();
-            include PLUG_DIR . '/vendor/frontend/css.php';
+            include plugin_dir_url(__FILE__) . '/vendor/frontend/css.php';
             $output = ob_get_contents();
             ob_end_clean();
             return $output;
