@@ -119,5 +119,3 @@ function landzai_comment(){
 function landzai_html($out){
 	return $out;
 }
-
-

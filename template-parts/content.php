@@ -5,9 +5,13 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  */
-
+if (is_active_sidebar('sidebar-2')){
+    $col = 'col-lg-6 col-md-6';
+}else {
+    $col = 'col-lg-4 col-md-6';
+}
 ?>
-<div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-6 col-md-6'); ?>>
+<div id="post-<?php the_ID(); ?>" <?php post_class($col); ?>>
     <div class="single-blog">
         <?php if ( has_post_thumbnail()) : ?>
             <div class="blog-img">

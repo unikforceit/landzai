@@ -14,11 +14,11 @@ function landzai_comment_nav() {
 		<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'landzai' ); ?></h2>
 		<div class="nav-links"> 
 			<?php 
-				if ( $prev_link = get_previous_comments_link( esc_attr_( 'Older Comments', 'landzai' ) ) ) :
+				if ( $prev_link = get_previous_comments_link( esc_attr__( 'Older Comments', 'landzai' ) ) ) :
 					printf( '<div class="nav-previous">%s</div>', $prev_link );
 				endif;
 
-				if ( $next_link = get_next_comments_link( esc_attr_( 'Newer Comments', 'landzai' )) ) :
+				if ( $next_link = get_next_comments_link( esc_attr__( 'Newer Comments', 'landzai' )) ) :
 					printf( '<div class="nav-next">%s</div>', $next_link );
 				endif;
 			?>
@@ -193,7 +193,7 @@ function landzai_navigation(){
                 <a href="<?php echo get_permalink( $prev->ID ); ?>">
                     <i class="pagination-arrow fas fa-long-arrow-alt-left"></i>
                     <h4 class="pagination-text">Previous Post</h4>
-                    <h3 class="post-title"><?php echo get_the_title( $prev->ID ); ?></h3>
+                    <h3 class="post-title"><?php echo wp_trim_words(get_the_title( $prev->ID ), 6); ?></h3>
                 </a>
             </div>
         <?php } if ($next) {?>
@@ -201,7 +201,7 @@ function landzai_navigation(){
                 <a href="<?php echo get_permalink( $next->ID ); ?>">
                     <i class="pagination-arrow fas fa-long-arrow-alt-right"></i>
                     <h4 class="pagination-text">Next Post</h4>
-                    <h3 class="post-title"><?php echo get_the_title( $next->ID ); ?></h3>
+                    <h3 class="post-title"><?php echo wp_trim_words(get_the_title( $next->ID ), 6); ?></h3>
                 </a>
             </div>
         <?php }?>

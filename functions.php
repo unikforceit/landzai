@@ -72,10 +72,6 @@ if ( ! function_exists( 'landzai_setup' ) ) :
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
-
-
-        add_theme_support( 'woocommerce');
-        add_theme_support( 'wc-product-gallery-slider' );
     }
 endif;
 add_action( 'after_setup_theme', 'landzai_setup' );
@@ -99,8 +95,17 @@ add_action( 'after_setup_theme', 'landzai_content_width', 0 );
  */
 function landzai_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'landzai' ),
+		'name'          => esc_html__( 'Sidebar Right', 'landzai' ),
 		'id'            => 'sidebar-1',
+		'description'   => esc_html__( 'Add widgets here.', 'landzai' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+    register_sidebar( array(
+		'name'          => esc_html__( 'Sidebar Left', 'landzai' ),
+		'id'            => 'sidebar-2',
 		'description'   => esc_html__( 'Add widgets here.', 'landzai' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
@@ -129,17 +134,17 @@ function landzai_fonts_url() {
     $subsets   = '';
 
     /* translators: If there are characters in your language that are not supported by this font, translate this to 'off'. Do not translate into your own language. */
-    if ( 'off' !== esc_html_x( 'on', 'Rubik font: on or off', 'textdomain' ) ) {
+    if ( 'off' !== esc_html_x( 'on', 'Rubik font: on or off', 'landzai' ) ) {
         $fonts[] = 'Rubik:300,400,500,600,700,800,900';
     }
 
     /* translators: If there are characters in your language that are not supported by this font, translate this to 'off'. Do not translate into your own language. */
-    if ( 'off' !== esc_html_x( 'on', 'Lato font: on or off', 'textdomain' ) ) {
+    if ( 'off' !== esc_html_x( 'on', 'Lato font: on or off', 'landzai' ) ) {
         $fonts[] = 'Lato:300,400,700,900';
     }
 
     /* translators: If there are characters in your language that are not supported by this font, translate this to 'off'. Do not translate into your own language. */
-    if ( 'off' !== esc_html_x( 'on', 'Source Sans Pro font: on or off', 'textdomain' ) ) {
+    if ( 'off' !== esc_html_x( 'on', 'Source Sans Pro font: on or off', 'landzai' ) ) {
         $fonts[] = 'Source Sans Pro:300,400,600,700,900';
     }
 
@@ -164,7 +169,6 @@ function landzai_scripts() {
     wp_enqueue_style('landzai-main', get_template_directory_uri() . '/assets/css/landzai.css');
     wp_enqueue_style('landzai-responsive', get_template_directory_uri() . '/assets/css/responsive.css');
     wp_enqueue_style('landzai-default', get_template_directory_uri() . '/assets/css/default.css');
-    wp_enqueue_style('landzai-wc', get_template_directory_uri() . '/assets/css/woocommerce.css');
     wp_enqueue_style('landzai-style', get_stylesheet_uri() );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -207,6 +211,3 @@ require get_template_directory() . '/inc/plug-dependent.php';
  */
  
 require_once get_template_directory() . '/inc/plugin-recommendations.php';
-
-require_once get_template_directory() . '/inc/wc-functions.php';
-

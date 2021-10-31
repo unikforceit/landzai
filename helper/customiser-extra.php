@@ -18,13 +18,14 @@ class landzai_theme_hooks {
         add_action('landzai_header',array(&$this,'landzai_render_header'));
         add_action('landzai_footer',array(&$this,'landzai_render_footer'));
         add_action('landzai_sidebar',array(&$this,'landzai_render_sidebar'));
+        add_action('landzai_sidebar_left',array(&$this,'landzai_render_sidebar_left'));
         add_action('footer_widget',array(&$this,'landzai_render_footer_widget'));
 
     }        
  
     function render_preloader(){
 
-        if( landzai_theme_option('enb_pre') ){
+        if( landzai_theme_option('enb_pre') == '1' ){
             echo '<!-- pre-loder-area area start here  -->
         <div class="preloader">
             <span class="loader">
@@ -46,6 +47,12 @@ class landzai_theme_hooks {
         $cust_header = landzai_theme_option('sidebar');
         echo do_shortcode('[INSERT_ELEMENTOR id="'.$cust_header.'"]');
         
+    }
+    function landzai_render_sidebar_left(){
+
+        $cust_header = landzai_theme_option('sidebar_left');
+        echo do_shortcode('[INSERT_ELEMENTOR id="'.$cust_header.'"]');
+
     }
 
     function landzai_render_footer_widget(){
